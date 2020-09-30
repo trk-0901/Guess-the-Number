@@ -1,0 +1,38 @@
+def num_game():
+	import random
+	x=random.randint(0,100)
+	n=input("Enter name: ")
+	print("Welcome", n+"!")
+	print("The computer will think of a number between 0 to 100.")
+	print("Can you guess what number it would be?")
+	print("Let's start!")
+	while True:
+		y=input("Enter a number: ")
+		try:
+			y=int(y)
+			if y==x:
+				print("Well done!")
+				break
+			elif y==x+1:
+				print("Close!")
+				continue
+			elif y==x-1:
+				print("Close!")
+				continue
+			elif y<x-1:
+				print("Too small")
+				continue
+			elif y>x+1:
+				print("Too big")
+				continue
+			elif y<0:
+				print("Error, out of range")
+				print("Negative number")
+				continue
+			elif y>100:
+				print("Error, out of range")
+				print("Larger than 100")
+				continue
+		except:
+			print("Error, please enter numeric input")
+	print("Congratulations",n+"!!!  You have outsmarted the computer!")
